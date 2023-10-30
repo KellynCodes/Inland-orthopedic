@@ -3,16 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { TitleStrategy } from '@angular/router';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { TemplatePageTitleStrategy } from './extension/title.strategy';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    NotfoundComponent,
+    AppointmentComponent,
+    ContactComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    { provide: TitleStrategy, useClass: TemplatePageTitleStrategy },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
