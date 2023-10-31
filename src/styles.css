@@ -75,8 +75,7 @@ span.arrow:hover .arrow_icon svg {
 }
 
 .bg-blue-teal-gradient {
-  background: #008080;
-  background: linear-gradient(90deg, #ff8686e6 0%, #003367 100%);
+  background: transparent linear-gradient(90deg, #003367 0%, #003367 100%);
 }
 
 .knee-treatment {
