@@ -11,7 +11,13 @@
         anything to discuss with us--we gat you covered.
       </p>
 
-      <form class="mt-6">
+      <form class="mt-6" name="contact" method="POST" data-netlify="true">
+        <input
+          type="hidden"
+          name="subject"
+          data-remove-prefix
+          value="Contact Alert from %{formName} with submission Id of (%{submissionId})"
+        />
         <div>
           <label class="block text-gray-700">Full Name</label>
           <input
