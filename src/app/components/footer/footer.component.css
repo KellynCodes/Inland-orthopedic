@@ -1,0 +1,7 @@
+.subscribe-input {
+  @apply appearance-none block w-full bg-gray-200 text-[#003367] border border-[#003367] rounded py-4 px-4 leading-tight focus:outline-none focus:bg-white focus:border-[#003367];
+}
+
+.subscribe-btn {
+  @apply absolute h-full bg-[#003367] hover:bg-[#ff8686e6] text-white px-4 py-2 text-xs font-bold rounded top-0 right-0;
+}

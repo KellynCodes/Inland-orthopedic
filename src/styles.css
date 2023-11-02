@@ -11,12 +11,12 @@
   scroll-behavior: smooth;
 }
 
-#menu-toggle:checked + #menu {
-  display: block;
-}
-
-#dropdown-toggle:checked + #dropdown {
-  display: block;
+.header-text {
+  margin: 3rem auto;
+  max-width: fit-content;
+  border-bottom: 4px solid #ff8686e6;
+  border-radius: 0 5px;
+  @apply font-bold text-3xl mb-8 text-[#003367];
 }
 
 a,

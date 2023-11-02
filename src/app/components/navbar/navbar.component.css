@@ -1,0 +1,44 @@
+.header {
+  @apply absolute bg-transparent bg-[#003367] top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64;
+}
+
+.hamburger {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.navbar {
+  @apply absolute left-0 right-0 md:static transition-all duration-1000 top-[-1000%] bg-white md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none;
+}
+
+.navlink {
+  @apply py-2 inline-block hover:text-[#ff8686e6] md:text-white md:px-2 font-semibold;
+}
+
+.book-appointment-btn {
+  @apply font-semibold text-center px-4 py-2 text-white hover:border bg-[#ff8686e6] hover:border-white hover:bg-[#003367] rounded;
+}
+
+/* Hamburger bar styles */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.hamburger.checked .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.hamburger.checked .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.checked .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -6px);
+}

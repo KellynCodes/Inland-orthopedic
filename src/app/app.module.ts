@@ -12,6 +12,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { TitleStrategy } from '@angular/router';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { TemplatePageTitleStrategy } from './extension/title.strategy';
+import { AboutComponent } from './pages/about/about.component';
+import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
+import { ProviderComponent } from './components/provider/provider.component';
+import { ProvidersComponent } from './pages/providers/providers.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import { TemplatePageTitleStrategy } from './extension/title.strategy';
     NotfoundComponent,
     AppointmentComponent,
     ContactComponent,
+    AboutComponent,
+    TestimonialsComponent,
+    ProviderComponent,
+    ProvidersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

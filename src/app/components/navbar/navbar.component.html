@@ -1,7 +1,5 @@
 <!-- start header -->
-<header
-  class="absolute bg-blue-teal-gradient bg-transparent bg-[#003367] top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64"
->
+<header class="header bg-blue-teal-gradient">
   <div class="h-full absolute top-0 left-0">
     <img
       src="assets/images/slide-2.jpg"
@@ -129,58 +127,26 @@
       </a>
     </div>
 
-    <label for="menu-toggle" class="pointer-cursor md:hidden block"
-      ><svg
-        class="fill-current text-white"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-      >
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg
-    ></label>
-
-    <input class="hidden" type="checkbox" id="menu-toggle" />
-
-    <div class="hidden md:block w-full md:w-auto" id="menu">
-      <nav
-        id="navbar"
-        class="w-full bg-white md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none"
-      >
+    <div
+      (click)="toggleNavbar()"
+      class="hamburger md:hidden z-[99999] cursor-pointer"
+      [class]="isNavbarOpen ? 'checked' : ''"
+    >
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="w-full md:block md:w-auto" id="menu">
+      <nav class="navbar" [style]="isNavbarOpen ? 'top: 70%' : ''">
         <ul class="md:flex items-center">
           <li>
-            <a
-              class="scrollto py-2 inline-block hover:text-[#ff8686e6] md:text-white md:hidden lg:block font-semibold"
-              href="#about"
-              >About Us</a
-            >
+            <a class="navlink scrollto" routerLink="/about">About Us</a>
           </li>
           <li class="md:ml-4">
-            <a
-              class="scrollto py-2 inline-block hover:text-[#ff8686e6] md:text-white md:px-2 font-semibold"
-              href="#services"
-              >Treatments</a
-            >
-          </li>
-          <li class="md:ml-4">
-            <a
-              class="scrollto py-2 inline-block hover:text-[#ff8686e6] md:text-white md:px-2 font-semibold"
-              href="#testimonials"
-              >Testimonials</a
-            >
-          </li>
-          <li class="md:ml-4">
-            <a
-              class="py-2 inline-block hover:text-[#ff8686e6] md:text-white md:px-2 font-semibold"
-              routerLink="contact"
-              >Contact Us</a
-            >
+            <a class="navlink scrollto" routerLink="contact">Contact Us</a>
           </li>
           <li class="md:ml-6 mt-3 md:mt-0">
-            <a
-              class="font-semibold text-center px-4 py-2 text-white hover:border bg-[#ff8686e6] hover:border-white hover:bg-[#003367] rounded"
-              routerLink="appointment"
+            <a class="book-appointment-btn" routerLink="appointment"
               >Book Appointment</a
             >
           </li>
