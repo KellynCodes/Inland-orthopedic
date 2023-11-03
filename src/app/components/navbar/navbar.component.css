@@ -11,7 +11,7 @@
 }
 
 .navbar {
-  @apply absolute flex md:flex-col items-center justify-center h-fit md:h-[4rem] right-0 md:static translate-x-[100%] md:translate-x-0 transition-all duration-1000 bg-white md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none;
+  @apply absolute flex md:flex-col items-center justify-center h-fit md:h-[4rem] right-0 md:static translate-x-[100%] md:translate-x-0 transition-all duration-[1s] ease-in-out bg-white md:bg-transparent rounded shadow-lg px-6 py-4 mt-4 text-center md:p-0 md:mt-0 md:shadow-none;
 }
 
 .navbar.open {

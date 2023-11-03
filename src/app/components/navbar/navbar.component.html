@@ -134,16 +134,17 @@
       <nav class="navbar" [class]="isNavbarOpen ? 'open' : ''">
         <ul class="md:flex items-center">
           <li (click)="toggleNavbar()">
-            <a class="navlink" routerLink="about">About Us</a>
+            <a class="navlink" routerLink="/">Home</a>
           </li>
           <li (click)="toggleNavbar()">
-            <a class="navlink" routerLink="providers">Our Providers</a>
+            <a class="navlink" routerLink="about">About Us</a>
           </li>
           <li class="md:ml-4" (click)="toggleNavbar()">
             <a class="navlink" routerLink="contact">Contact Us</a>
           </li>
           <li class="md:ml-6 mt-3 md:mt-0" (click)="toggleNavbar()">
             <app-button
+              (click)="toggleNavbar()"
               customClasses="hover:border bg-[#ff8686e6] hover:border-white hover:bg-[#003367]"
               link="appointment"
               label="Book Appointment"

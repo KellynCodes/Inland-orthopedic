@@ -14,8 +14,6 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { TemplatePageTitleStrategy } from './extension/title.strategy';
 import { AboutComponent } from './pages/about/about.component';
 import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
-import { ProviderComponent } from './components/provider/provider.component';
-import { ProvidersComponent } from './pages/providers/providers.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AlertComponent } from './components/alert/alert.component';
 
@@ -30,8 +28,6 @@ import { AlertComponent } from './components/alert/alert.component';
     ContactComponent,
     AboutComponent,
     TestimonialsComponent,
-    ProviderComponent,
-    ProvidersComponent,
     ButtonComponent,
     AlertComponent,
   ],
