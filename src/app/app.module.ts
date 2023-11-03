@@ -16,6 +16,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
 import { ProviderComponent } from './components/provider/provider.component';
 import { ProvidersComponent } from './pages/providers/providers.component';
+import { ButtonComponent } from './components/button/button.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProvidersComponent } from './pages/providers/providers.component';
     TestimonialsComponent,
     ProviderComponent,
     ProvidersComponent,
+    ButtonComponent,
+    AlertComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

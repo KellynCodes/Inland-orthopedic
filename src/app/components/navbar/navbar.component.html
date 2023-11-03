@@ -1,13 +1,5 @@
 <!-- start header -->
 <header class="header bg-blue-teal-gradient">
-  <div class="h-full absolute top-0 left-0">
-    <img
-      src="assets/images/slide-2.jpg"
-      alt=""
-      class="cover w-full h-full object-cover z-0 opacity-10"
-      style="border-bottom-right-radius: 128px"
-    />
-  </div>
   <div
     class="hidden md:flex justify-between items-center py-2 border-b text-sm"
     style="border-color: white"
@@ -118,9 +110,11 @@
   </div>
 
   <div class="flex flex-wrap items-center justify-between py-6">
-    <div class="w-1/2 md:w-auto">
+    <div
+      class="flex items-center justify-center w-1/2 md:w-auto h-fit md:h-[4rem]"
+    >
       <a
-        routerLink="home"
+        routerLink="/"
         class="text-white hover:text-[#ee6565e6] font-bold text-sm md:text-2xl"
       >
         Inland OrthoMed
@@ -136,19 +130,24 @@
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
-    <div class="w-full md:block md:w-auto" id="menu">
-      <nav class="navbar" [style]="isNavbarOpen ? 'top: 70%' : ''">
+    <div class="w-full md:block md:w-auto">
+      <nav class="navbar" [class]="isNavbarOpen ? 'open' : ''">
         <ul class="md:flex items-center">
-          <li>
-            <a class="navlink scrollto" routerLink="/about">About Us</a>
+          <li (click)="toggleNavbar()">
+            <a class="navlink" routerLink="about">About Us</a>
           </li>
-          <li class="md:ml-4">
-            <a class="navlink scrollto" routerLink="contact">Contact Us</a>
+          <li (click)="toggleNavbar()">
+            <a class="navlink" routerLink="providers">Our Providers</a>
           </li>
-          <li class="md:ml-6 mt-3 md:mt-0">
-            <a class="book-appointment-btn" routerLink="appointment"
-              >Book Appointment</a
-            >
+          <li class="md:ml-4" (click)="toggleNavbar()">
+            <a class="navlink" routerLink="contact">Contact Us</a>
+          </li>
+          <li class="md:ml-6 mt-3 md:mt-0" (click)="toggleNavbar()">
+            <app-button
+              customClasses="hover:border bg-[#ff8686e6] hover:border-white hover:bg-[#003367]"
+              link="appointment"
+              label="Book Appointment"
+            />
           </li>
         </ul>
       </nav>

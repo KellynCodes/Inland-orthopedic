@@ -1,11 +1,23 @@
 .home {
-  @apply bg-transparent bg-[#003367] relative px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 overflow-hidden py-48 flex items-center min-h-screen;
+  @apply bg-transparent relative mt-[9rem] flex items-center justify-end min-h-screen w-full h-[100vh] max-h-[100vh] object-cover z-0;
+  background-image: url("../../../assets/images/slide-3.jpg");
 }
 
-.book-appointment-btn {
-  @apply px-8 py-4 hover:border h-[3.5rem] text-center hover:border-white bg-[#ff8686e6] hover:bg-[#003367] text-white rounded inline-block mt-8 font-semibold;
+@media (min-width: 1000px) {
+  .home {
+    background-position: center;
+    background-size: cover;
+  }
 }
 
-.book-appointment-btn-cta {
-  @apply p-4 h-[3.5rem] text-center w-[11rem] text-sm bg-[#ff8686e6] hover:border hover:border-white hover:bg-[#003367] text-white rounded inline-block font-semibold md:ml-8 mt-4 md:mt-0;
+.home::after {
+  content: "";
+  @apply h-[100vh] w-full bg-[#00346770] top-0 left-0 right-0 absolute z-[9];
+  border-bottom-right-radius: 100px;
+}
+
+@media (min-width: 1024px) {
+  .home::after {
+    border-bottom-right-radius: 128px;
+  }
 }

@@ -11,8 +11,19 @@
   scroll-behavior: smooth;
 }
 
+.section {
+  margin: 2rem auto !important;
+  max-width: 90%;
+}
+
+@media (max-width: 600px) {
+  .section {
+    max-width: 100%;
+  }
+}
+
 .header-text {
-  margin: 3rem auto;
+  margin: 2rem auto;
   max-width: fit-content;
   border-bottom: 4px solid #ff8686e6;
   border-radius: 0 5px;
@@ -70,8 +81,8 @@ span.arrow:hover .arrow_icon svg {
   transform: translateX(0.75em);
 }
 
-.cover {
-  border-bottom-right-radius: 128px;
+.rounded-b-right {
+  border-bottom-right-radius: 100px;
 }
 
 .bg-blue-teal-gradient {
@@ -86,7 +97,7 @@ span.arrow:hover .arrow_icon svg {
 }
 
 @media (min-width: 1024px) {
-  .cover {
-    border-bottom-right-radius: 256px;
+  .rounded-b-right {
+    border-bottom-right-radius: 128px;
   }
 }

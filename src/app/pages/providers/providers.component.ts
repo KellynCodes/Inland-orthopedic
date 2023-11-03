@@ -4,7 +4,7 @@ import {
   Physicians,
   ProviderDto,
 } from '../../data/providers/providers';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-providers',

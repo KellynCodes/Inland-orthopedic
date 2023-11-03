@@ -1,19 +1,19 @@
-<section id="providers" class="doctors">
+<router-outlet />
+
+<section id="providers" class="section doctors">
   <div class="container">
     <h2 class="header-text">Providers</h2>
-    <div class="row">
-      <div class="member-container">
-        <div *ngFor="let doctor of providers" class="member">
-          <div class="member-img">
-            <img [src]="doctor.image" [alt]="doctor.name" />
-            <div class="social">
-              <a [routerLink]="['provider', doctor.id]">Read More</a>
-            </div>
+    <div class="member-container m-auto w-full lg:w-[90%]">
+      <div *ngFor="let doctor of providers" class="member">
+        <div class="member-img">
+          <img [src]="doctor.image" [alt]="doctor.name" />
+          <div class="social">
+            <a [routerLink]="['provider', doctor.id]">Read More</a>
           </div>
-          <div class="member-info">
-            <h4>{{ doctor.name }}</h4>
-            <span> {{ doctor.specialization }} </span>
-          </div>
+        </div>
+        <div class="member-info">
+          <h4>{{ doctor.name }}</h4>
+          <span> {{ doctor.specialization }} </span>
         </div>
       </div>
     </div>

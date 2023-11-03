@@ -31,6 +31,6 @@ export class ProviderComponent {
   }
 
   closeModal(): void {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/providers');
   }
 }
