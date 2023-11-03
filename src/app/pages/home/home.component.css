@@ -1,6 +1,10 @@
 .home {
-  @apply bg-transparent relative mt-[9rem] flex items-center justify-end min-h-screen w-full h-[100vh] max-h-[100vh] object-cover z-0;
+  @apply bg-transparent relative mt-16 lg:mt-[9rem] flex items-center justify-around min-h-screen w-full h-[100vh] max-h-[100vh] object-cover z-0;
   background-image: url("../../../assets/images/slide-3.jpg");
+}
+
+.header-text-container {
+  @apply flex p-4 flex-col items-center justify-center gap-5 lg:gap-8 w-full md:w-[75%] lg:w-[60%] z-10 h-[60%] lg:-mt-[4.5rem];
 }
 
 @media (min-width: 1000px) {
