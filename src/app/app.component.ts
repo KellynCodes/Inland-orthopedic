@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, Inject, inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'client';
+  public IsViewReady: boolean = true;
+
+  ngAfterViewInit(): void {
+    this.IsViewReady = false;
+  }
 }
