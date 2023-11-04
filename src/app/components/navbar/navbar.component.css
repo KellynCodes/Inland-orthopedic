@@ -1,11 +1,8 @@
 .header {
-  @apply fixed top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 max-h-[8rem];
+  @apply fixed top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 min-h-[5rem] max-h-[8rem];
 }
 
 .hamburger {
-  position: absolute;
-  top: 15px;
-  right: 20px;
   cursor: pointer;
   z-index: 999;
 }
