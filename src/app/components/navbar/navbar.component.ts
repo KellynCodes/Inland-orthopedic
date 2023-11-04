@@ -1,5 +1,4 @@
-import { ScrollService } from './../../services/shared/scroll.service';
-import { Component, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',

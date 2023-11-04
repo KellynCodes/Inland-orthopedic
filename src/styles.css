@@ -12,7 +12,7 @@
 }
 
 .section {
-  margin: 7rem auto 2rem auto !important;
+  margin: 3.5rem auto 2rem auto !important;
   max-width: 90%;
 }
 
@@ -24,6 +24,19 @@
 }
 
 .loader {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  @apply flex items-center justify-center min-h-screen min-w-full;
+  z-index: 99999999;
+}
+
+/* .loader::before {
+  content: "Sobol Orthopedic Care Loading...";
+} */
+
+.loader::after {
+  content: "";
   border: 4px solid #ff8686e6;
   border-top: 4px solid transparent;
   border-radius: 50%;
@@ -48,6 +61,40 @@
   border-bottom: 4px solid #ff8686e6;
   border-radius: 0 5px;
   @apply font-bold text-3xl mb-8 text-[#003367];
+}
+
+/* Define the styles for the scrollbar track and thumb */
+/* This will work in some modern browsers (e.g., Chrome) */
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #ff8686e6; /* color of the scrollbar thumb */
+  border-radius: 6px; /* rounded corners of the thumb */
+}
+
+/* Handle when the user hovers over the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8686e6; /* color of the thumb on hover */
+}
+
+/* Track (background of the scrollbar) when not hovering over the thumb */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle when the user hovers over the track */
+::-webkit-scrollbar-track:hover {
+  background: #ddd;
+}
+
+/* Corner (between the vertical and horizontal scrollbars) */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1;
 }
 
 a,

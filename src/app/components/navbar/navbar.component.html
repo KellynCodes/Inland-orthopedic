@@ -1,8 +1,7 @@
 <!-- start header -->
 <header class="header bg-blue-teal-gradient">
   <div
-    class="hidden md:flex justify-between items-center py-2 border-b text-sm"
-    style="border-color: white"
+    class="hidden md:flex max-h-[2.5rem] justify-between border-white items-center py-2 border-b text-sm"
   >
     <div class="">
       <ul class="flex text-white">
@@ -109,7 +108,7 @@
     </div>
   </div>
 
-  <div class="flex flex-wrap items-center justify-between py-6">
+  <div class="flex max-h-[5rem] flex-wrap items-center justify-between p-2">
     <div
       class="flex items-center justify-center w-1/2 md:w-auto h-fit md:h-[4rem]"
     >
@@ -117,7 +116,7 @@
         routerLink="/"
         class="text-white hover:text-[#ee6565e6] font-bold text-sm md:text-2xl"
       >
-        Sobol OrthoMed
+        <img class="" src="../../../assets/images/logo.png" alt="Logo" />
       </a>
     </div>
 
@@ -145,7 +144,7 @@
           <li class="md:ml-6 mt-3 md:mt-0" (click)="toggleNavbar()">
             <app-button
               (click)="toggleNavbar()"
-              customClasses="hover:border bg-[#ff8686e6] hover:border-white hover:bg-[#003367]"
+              customClasses="bg-[#ff8686e6] hover:bg-[#003367]"
               link="appointment"
               label="Book Appointment"
             />
