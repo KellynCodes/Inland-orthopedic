@@ -11,6 +11,11 @@
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .section {
   margin: 3.5rem auto 2rem auto !important;
   max-width: 90%;
