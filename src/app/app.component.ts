@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,6 @@ export class AppComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.IsViewReady = false;
-    }, 2000);
+    }, 3500);
   }
 }

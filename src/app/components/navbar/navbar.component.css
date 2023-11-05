@@ -1,10 +1,5 @@
 .header {
-  @apply fixed bg-red-500  top-0 left-0 w-full z-50 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 min-h-[5rem] max-h-[8rem];
-}
-
-.hamburger {
-  cursor: pointer;
-  z-index: 999;
+  @apply fixed top-0 left-0 w-full z-50 lg:px-16 xl:px-40 2xl:px-64 min-h-[5rem] max-h-[8rem] mb-8;
 }
 
 .navbar {
