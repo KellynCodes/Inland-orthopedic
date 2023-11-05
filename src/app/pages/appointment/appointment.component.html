@@ -1,28 +1,56 @@
-<section class="mt-28 mb-28 flex flex-col md:flex-row h-screen items-center">
+<app-alert [successMessage]="successMessage" [errorMessage]="errorMessage" />
+<section class="mt-36 mb-28 flex flex-col md:flex-row h-screen items-center">
   <div
     class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 h-screen px-6 lg:px-16 xl:px-24 flex items-center justify-center"
   >
     <div class="w-full h-100">
-      <h1 class="text-xl md:text-3xl font-bold leading-tight mt-12">
-        Book your appointment with DentalPro in 2 minutes
-      </h1>
+      <h1 class="header-text md:mx-0">Book your appointment</h1>
       <p class="text-gray-700 mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie
-        metus turpis. Vivamus mollis diam quis erat tincidunt.
+        You can enjoy your well being again by doing just one thing now! Book
+        your appointment with us. It takes just 20s to book your appointment
+        with us.
       </p>
 
-      <form class="mt-6" action="#" method="POST">
+      <form class="mt-6" [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
         <div>
           <label class="block text-gray-700">Full Name</label>
           <input
             type="text"
-            name=""
-            id=""
+            id="name"
+            formControlName="name"
             placeholder="Enter Full Name"
             class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
             autofocus
-            required
           />
+          <h6
+            class="text-red-500"
+            *ngIf="
+              appointmentForm.get('name')?.touched &&
+              appointmentForm.get('name')?.hasError('required')
+            "
+          >
+            Name is required.
+          </h6>
+        </div>
+
+        <div>
+          <label class="block text-gray-700">Your Email</label>
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            placeholder="example@gmail.com"
+            class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
+          />
+          <h6
+            class="text-red-500"
+            *ngIf="
+              appointmentForm.get('email')?.touched &&
+              appointmentForm.get('email')?.hasError('required')
+            "
+          >
+            Name is required.
+          </h6>
         </div>
 
         <div class="flex flex-col md:flex-row items-start mt-4 md:-mx-4">
@@ -30,24 +58,35 @@
             <label class="block text-gray-700">Phone Number</label>
             <input
               type="tel"
-              name=""
-              id=""
+              id="phone"
+              formControlName="phone"
               placeholder="Enter Phone Number"
               class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
-              required
             />
+            <h6
+              class="text-red-500"
+              *ngIf="
+                appointmentForm.get('phone')?.touched &&
+                appointmentForm.get('phone')?.hasError('pattern')
+              "
+            >
+              Invalid phone number format.
+            </h6>
           </div>
 
           <div class="w-full md:mx-4 mt-4 md:mt-0">
             <label class="block text-gray-700">Treatment</label>
             <div class="relative mt-1">
               <select
-                name=""
-                id=""
+                id="department"
+                formControlName="department"
                 class="w-full px-4 py-3 rounded bg-gray-200 border focus:border-[#003367] focus:bg-white focus:outline-none appearance-none"
-                required
               >
-                <option value="" selected disabled>Select Treatment</option>
+                <option value="">Select Department</option>
+                <option value="Joint Replacement">Joint Replacement</option>
+                <option value="Sports Medicine">Sports Medicine</option>
+                <option value="Physical Therapy">Physical Therapy</option>
+                <option value="Spin Care">Spin Care</option>
               </select>
 
               <div
@@ -63,6 +102,15 @@
                   />
                 </svg>
               </div>
+              <h6
+                class="text-red-500"
+                *ngIf="
+                  appointmentForm.get('department')?.touched &&
+                  appointmentForm.get('department')?.hasError('required')
+                "
+              >
+                Department is required.
+              </h6>
             </div>
           </div>
         </div>
@@ -70,16 +118,25 @@
         <div class="w-full mt-4">
           <label class="block text-gray-700">Message</label>
           <textarea
-            name=""
-            id=""
+            id="message"
+            formControlName="message"
             placeholder="Write message"
             class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none resize-none"
             rows="3"
-            required
           ></textarea>
+          <h6
+            class="text-red-500"
+            *ngIf="
+              appointmentForm.get('message')?.touched &&
+              appointmentForm.get('message')?.hasError('required')
+            "
+          >
+            Message is required.
+          </h6>
         </div>
 
         <button
+          [innerText]="isSending ? 'Sending...' : 'Send Message'"
           type="submit"
           class="w-full block bg-[#003367] hover:bg-[#ff8686e6] focus:bg-[#ff8686e6] transition-all duration-[100ms] text-white font-semibold rounded px-4 py-3 mt-12"
         >
@@ -90,7 +147,7 @@
   </div>
 
   <div
-    class="bg-blue-teal-gradient justify-center cover hidden text-white lg:block w-full md:w-1/2 h-screen"
+    class="bg-blue-teal-gradient justify-center cover hidden text-white lg:block w-full md:w-1/2 h-[112vh]"
   >
     <h1 class="text-center text-white font-bold text-[3rem] mt-36">
       Make an appointment and will get back to you within 5 minutes

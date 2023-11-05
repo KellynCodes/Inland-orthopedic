@@ -8,7 +8,9 @@ import { AfterViewInit, Component, Inject, inject } from '@angular/core';
 export class AppComponent {
   public IsViewReady: boolean = true;
 
-  ngAfterViewInit(): void {
-    this.IsViewReady = false;
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.IsViewReady = false;
+    }, 2000);
   }
 }
