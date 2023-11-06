@@ -10,11 +10,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { WhyUsComponent } from './pages/whyUs/whyus.component';
 import { TitleStrategy } from '@angular/router';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { TemplatePageTitleStrategy } from './extension/title.strategy';
 import { AboutComponent } from './pages/about/about.component';
-import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AlertComponent } from './components/alert/alert.component';
 
@@ -28,7 +28,7 @@ import { AlertComponent } from './components/alert/alert.component';
     AppointmentComponent,
     ContactComponent,
     AboutComponent,
-    TestimonialsComponent,
+    WhyUsComponent,
     ButtonComponent,
     AlertComponent,
   ],
