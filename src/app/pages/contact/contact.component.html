@@ -102,6 +102,15 @@
           >
             Message is required.
           </h6>
+          <h6
+            class="text-red-500"
+            *ngIf="
+              contactForm.get('message')?.touched &&
+              contactForm.get('message')?.hasError('minlength')
+            "
+          >
+            Message should be equal or greater than 150 characters.
+          </h6>
         </div>
 
         <button

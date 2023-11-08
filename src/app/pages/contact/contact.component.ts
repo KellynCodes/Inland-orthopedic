@@ -22,7 +22,7 @@ export class ContactComponent {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]],
       date: [new Date().toDateString(), Validators.required],
-      message: ['', Validators.required],
+      message: ['', [Validators.required, Validators.minLength(150)]],
     });
   }
 

@@ -1,5 +1,5 @@
 .alert {
-  @apply bg-white p-4 rounded-xl flex items-center max-w-[350px] fixed top-[-100%] left-[43%] z-[999999] shadow-sm;
+  @apply fixed top-[-100%] left-[30%] z-[999999];
   transition: all 1s ease-in-out;
 }
 
@@ -8,42 +8,12 @@
     width: 96vw;
     left: 2%;
   }
+
+  .alert.show {
+    top: 5% !important;
+  }
 }
 
 .alert.show {
-  top: 3% !important;
-}
-
-.alert .icon {
-  padding: 10px !important;
-  border-radius: 50%;
-  font-size: 20px;
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.alert .text {
-  flex: 1;
-}
-
-.error .icon {
-  background-color: red;
-  color: white !important;
-}
-
-.error .text {
-  color: red;
-}
-
-.success .icon {
-  background-color: green;
-  color: white;
-}
-
-.success .text {
-  color: green;
+  top: 10% !important;
 }

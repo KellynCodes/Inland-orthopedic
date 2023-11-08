@@ -25,12 +25,11 @@ export class AppointmentComponent {
       phone: ['', [Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]],
       date: [new Date().toDateString(), Validators.required],
       department: ['', Validators.required],
-      message: ['', Validators.required],
+      message: ['', [Validators.required, Validators.minLength(150)]],
     });
   }
 
   async onSubmit(): Promise<void> {
-    console.log(this.appointmentForm.value);
     if (!this.appointmentForm.valid) {
       this.errorMessage = 'Please fill all the fields';
       this.setMessageState(5000);
