@@ -8,30 +8,37 @@ import { SwiperOptions } from 'swiper/types';
   styleUrls: ['./testimonials.component.css'],
 })
 export class TestimonialsComponent {
-  testimonials = [
+  testimonials: TestimonialDto[] = [
     {
-      name: 'John Doe',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      name: 'Lisa Me',
+      text: 'Outstanding care at Sobol Orthopedic! From diagnosis to recovery, the team provided exceptional support during my spine treatment. Their commitment to patient well-being is unmatched. Thank you for giving me my mobility back!',
       avatar: 'assets/images/slide-1.jpg',
-      title: 'Software Engineer',
+      title: 'Advanced Spine Surgery and Comprehensive Treatment',
     },
     {
-      name: 'Jane Smith',
-      text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      name: 'Mike S',
+      text: "I can't express my gratitude enough to Sobol Orthopedic. After a sports injury, their sports medicine specialists guided me through a personalized treatment plan, combining innovative therapies and rehabilitation exercises. The comprehensive approach and cutting-edge techniques made all the difference in my recovery",
       avatar: 'assets/images/slide-2.jpg',
-      title: 'Product Designer',
+      title: 'Personalized Sports Medicine Plan and Rehabilitation',
     },
     {
-      name: 'John Doe',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      name: 'Emily B.',
+      text: 'My experience with Sobol Orthopedic exceeded expectations. Their focus on rehabilitation and personalized physical therapy significantly improved my recovery from a musculoskeletal issue. I recommend Sobol to anyone seeking top-tier orthopedic care.',
       avatar: 'assets/images/slide-3.jpg',
-      title: 'Product Designer',
+      title: 'Personalized Rehabilitation and Physical Therapy',
     },
     {
-      name: 'Jane Smith',
-      text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      name: 'Robert H.',
+      text: "Choosing Sobol Orthopedic was the best decision for my hip replacement. The surgeons and support staff provided unparalleled expertise and kindness. Today, I enjoy an active lifestyle, all thanks to Sobol's top-notch orthopedic care.",
       avatar: 'assets/images/slide-1.jpg',
-      title: 'Product Designer',
+      title: 'Successful Hip Replacement',
+    },
+
+    {
+      name: 'David L.',
+      text: 'Sobol Orthopedic Medical Group is a beacon of excellence. They successfully addressed my joint issues with precision and care. The friendly staff and state-of-the-art facilities made my orthopedic journey seamless and comfortable',
+      avatar: 'assets/images/slide-1.jpg',
+      title: 'Immediate Orthopedic Trauma Care and Rehabilitation',
     },
   ];
 
@@ -55,4 +62,11 @@ export class TestimonialsComponent {
       },
     },
   };
+}
+
+interface TestimonialDto {
+  name: string;
+  text: string;
+  avatar: string;
+  title: string;
 }

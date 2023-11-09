@@ -1,53 +1,47 @@
-<div class="min-h-screen w-full bg-blue-100 text-white px-4">
-  <h1 class="header-text">Testimonials</h1>
-  <div class="swiper-wrapper">
-    <swiper-container
-      Swiper
-      class="w-[80%] flex items-center justify-center h-[90%] m-auto"
-      id="testimonial-slider"
-      init="false"
-      navigation="true"
-      pagination="true"
-      pagination-clickable="true"
-      [config]="swiperConfig"
-    >
-      <swiper-slide
-        *ngFor="let testimonial of testimonials"
-        class="swiper-slide flex flex-col items-center justify-between w-[24rem] h-[20rem] min-h-[12rem] bg-white p-6 rounded-[10px] shadow"
-      >
-        <div
-          class="testimonial-author flex items-center gap-3 mb-4 w-full h-[46%]"
-        >
-          <img
-            [src]="testimonial.avatar"
-            alt="{{ testimonial.name }}"
-            class="w-[10rem] h-[10rem] rounded-[50%] mr-4 object-cover"
-          />
-          <div class="w-1/2">
-            <h4 class="font-bold text-xl mt-3 text-blue-500">
-              {{ testimonial.name }}
-            </h4>
-            <h5 class="font-bold text-lg mt-3 text-blue-500">
-              {{ testimonial.title }}
-            </h5>
-          </div>
-        </div>
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2 class="header-text">Testimonials</h2>
+    <h4 class="mx-auto font-bold text-lg w-fit text-center">
+      What are they saying about us.
+    </h4>
 
-        <blockquote
-          class="w-full h-[46%] quote text-lg font-bold text-start leading-7 text-blue-300"
-        >
-          {{ testimonial.text }}
-        </blockquote>
-      </swiper-slide>
-    </swiper-container>
-    <div class="swiper-pagination mt-[10rem]"></div>
-    <div class="swiper-button-next text-lg text-white bg -white"></div>
-    <div class="swiper-button-prev text-lg text-white bg-white"></div>
-    <div class="autoplay-progress">
-      <svg viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r="20"></circle>
-      </svg>
-      <span></span>
+    <div class="testimonials-slider swiper w-[90%] mx-auto">
+      <swiper-container
+        class="swiper-wrapper"
+        Swiper
+        pagination="true"
+        navigation="true"
+        pagination-clickable="true"
+        [config]="swiperConfig"
+        init="false"
+      >
+        <ng-container *ngFor="let testimonial of testimonials">
+          <swiper-slide class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img
+                  src="assets/images/logo.png"
+                  class="testimonial-img"
+                  [alt]="testimonial.name"
+                />
+                <h3>{{ testimonial.name }}</h3>
+                <h4>{{ testimonial.title }}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{ testimonial.text }}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </swiper-slide>
+        </ng-container>
+        <!-- End testimonial item -->
+
+        <!-- End testimonial item -->
+      </swiper-container>
+      <div class="swiper-pagination"></div>
     </div>
   </div>
-</div>
+</section>
+<!-- End Testimonials Section -->
