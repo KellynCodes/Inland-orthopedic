@@ -1,19 +1,36 @@
 <!-- start about -->
+<router-outlet />
 <section id="about" class="section px-4 py-16 sm:px-8">
   <h2 class="header-text">About Us</h2>
   <div class="w-full flex flex-col lg:flex-row">
     <div class="w-full lg:w-1/2">
-      <h2 class="text-4xl leading-10 font-bold">
-        Welcome to the Sobol Orthopedic Medical Group .
-      </h2>
+      <h2 class="text-4xl leading-10 font-bold"></h2>
       <p class="text-2xl font-bold mt-4">
         Excellence in orthopedic medical care.
       </p>
-      <p class="text-lg file:mt-2 leading-relaxed">
-        Sobol Orthopedic Medical Group has been serving the community for over
-        20 years, dedicated to providing comprehensive and cutting-edge
-        orthopedic care. Our team of board-certified professionals is committed
-        to helping our patients move through life with ease and comfort.
+      <p [appTruncateText]="550" class="text-lg file:mt-2 leading-relaxed">
+        Sobol Orthopedic Medical Group understands the uniqueness of orthopedic
+        healthcare needs. <br />
+        <br />
+        Our commitment to the community is rooted in overcoming boundaries, and
+        we believe that your orthopedic care should mirror this same
+        determination. Our dedicated and diverse team comprises
+        fellowship-trained specialists in each field of orthopedic medicine.<br />
+        <br />
+        These physicians have undergone the highest level of training available
+        in their respective areas of expertise. This ensures that you receive
+        the most advanced orthopedic care available.
+        <br />
+        <br />
+        With a legacy spanning over 15 years, our unwavering mission has been to
+        deliver cutting-edge treatments for bone, joint, and muscle-related
+        conditions.<br />
+        <br />
+        Our commitment to excellence extends to all facets of orthopedic
+        specialization, including joint replacement and revision, sports
+        medicine, physical medicine and rehabilitation, spine care, and
+        orthopedic trauma. We take pride in being recognized for our exceptional
+        training and expertise in orthopedics and sports medicine.
       </p>
     </div>
 
@@ -42,8 +59,13 @@
             Everything You Need Under One Roof
           </h4>
           <p class="mt-2 leading-relaxed">
-            Offering advanced procedures for hip, knee, and shoulder
-            replacements.
+            You're seeking a trustworthy orthopedist, someone who firmly grasps
+            the lifeline that guides you. Whether you've arrived due to a
+            sports-related injury or chronic discomfort, our team of world-class
+            orthopedic specialists will stand by your side throughout your
+            journey. It's time to reclaim your healthy, dynamic self. It's time
+            to reengage in activities you once believed were beyond reach. It's
+            time to rekindle the spirit of adventure in your life.
           </p>
         </div>
       </div>

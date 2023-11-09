@@ -8,12 +8,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 .section {
@@ -163,9 +166,9 @@ span.arrow:hover .arrow_icon svg {
 
 .knee-treatment {
   display: block !important;
-  background-image: url("assets/images/knee_treatment.jpeg");
+  background-image: url("assets/images/orthopedic.jpeg");
   background-position: center;
-  background-size: 100%;
+  background-size: contain;
 }
 
 @media (min-width: 1024px) {

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -17,7 +17,13 @@ import { TemplatePageTitleStrategy } from './extension/title.strategy';
 import { AboutComponent } from './pages/about/about.component';
 import { ButtonComponent } from './components/button/button.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
+import { register } from 'swiper/element/bundle';
+import { SwiperDirective } from './directives/swiper.directive';
+import { TruncateDirective } from './directives/truncate.directive';
+import { DetailComponent } from './pages/about/detail/detail.component';
 
+register();
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +37,17 @@ import { AlertComponent } from './components/alert/alert.component';
     WhyUsComponent,
     ButtonComponent,
     AlertComponent,
+    TestimonialsComponent,
+    SwiperDirective,
+    TruncateDirective,
+    DetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [
     { provide: LocationStrategy, useClass: PathLocationStrategy },
     { provide: TitleStrategy, useClass: TemplatePageTitleStrategy },
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
