@@ -3,31 +3,39 @@
   (click)="closeModal()"
 >
   <div
-    class="w-full md:w-1/2 min-h-[95vh] rounded-sm overflow-y-scroll shadow-lg z-[999999999] bg-white absolute mx-auto inset-0"
+    class="w-full md:w-1/2 pb-4 min-h-[95vh] rounded-md overflow-y-scroll shadow-lg z-[999999999] bg-white absolute mx-auto inset-0"
   >
     <img
-      class="w-full min-h-[6rem] objectc"
+      class="w-full h-[16rem] object-cover"
       src="assets/images/knee-surgery.jpg"
-      alt="Sunset in the mountains"
+      alt="Sobol Orthopedic Medical Group"
     />
     <button
       (click)="closeModal()"
-      class="bg-[#fb8888e6] hover:bg-[#ee6565e6] cursor-pointer w-fit h-fit px-3 py-2 rounded-sm text-center text-white font-bold text-lg"
+      class="bg-[#003367] hover:bg-[#ee6565e6] cursor-pointer w-fit h-fit px-3 py-2 rounded-sm text-center text-white font-bold text-lg"
     >
       Close
     </button>
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Sobol Orthopedic Medical Group</div>
-      <p class="text-gray-700 text-base">
+      <div class="text-gray-700 text-base">
         We understands the uniqueness of orthopedic healthcare needs. Our
         commitment to the community is rooted in overcoming boundaries, and we
         believe that your orthopedic care should mirror this same determination.
         Our dedicated and diverse team comprises fellowship-trained specialists
-        in each field of orthopedic medicine.<br />
+        in each field of orthopedic medicine.
+        <br />
         <br />
         These physicians have undergone the highest level of training available
         in their respective areas of expertise. This ensures that you receive
-        the most advanced orthopedic care available.<br />
+        the most advanced orthopedic care available.
+        <br />
+        <br />
+        <h5
+          class="inline-block bg-[#ee6565e6] text-white rounded-full px-3 py-1 text-sm font-semibold mb-2"
+        >
+          Continue reading here
+        </h5>
         <br />
         With a legacy spanning over 15 years, our unwavering mission has been to
         deliver cutting-edge treatments for bone, joint, and muscle-related
@@ -38,7 +46,7 @@
         medicine, physical medicine and rehabilitation, spine care, and
         orthopedic trauma. We take pride in being recognized for our exceptional
         training and expertise in orthopedics and sports medicine.
-      </p>
+      </div>
     </div>
     <hr class="m-3" />
 
@@ -54,7 +62,7 @@
       <h4 class="font-bold text-xl m-4">On-Site Services</h4>
       <span
         *ngFor="let orthoSpecialist of physicalTherapy"
-        class="inline-block bg-gray-200 hover:bg-[#ee6565e6] hover:text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+        class="inline-block bg-gray-200 hover:bg-[#003367] hover:text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
         >{{ orthoSpecialist.value }}</span
       >
     </div>
