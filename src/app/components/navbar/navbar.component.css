@@ -1,5 +1,5 @@
 .header {
-  @apply fixed top-0 left-0 w-full z-50 lg:px-16 xl:px-40 2xl:px-64 min-h-[5rem] max-h-[8rem] mb-8;
+  @apply fixed top-0 left-0 w-full z-50 min-h-[5rem] max-h-[8rem] mb-8;
 }
 
 .navbar {
