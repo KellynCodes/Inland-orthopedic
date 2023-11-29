@@ -16,28 +16,28 @@
         pagination="true"
         pagination-clickable="true"
         [config]="swiperConfig"
-        init="false"
+        init="true"
       >
-        <ng-container *ngFor="let testimonial of testimonials">
-          <swiper-slide class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <img
-                  src="assets/images/logo.png"
-                  class="testimonial-img"
-                  [alt]="testimonial.name"
-                />
-                <h3>{{ testimonial.name }}</h3>
-                <h4>{{ testimonial.title }}</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  {{ testimonial.text }}
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
+        @for(testimonial of testimonials; track testimonial.id){
+        <swiper-slide class="swiper-slide">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <img
+                src="assets/images/logo.png"
+                class="testimonial-img"
+                [alt]="testimonial.name"
+              />
+              <h3>{{ testimonial.name }}</h3>
+              <h4>{{ testimonial.title }}</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{ testimonial.text }}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
             </div>
-          </swiper-slide>
-        </ng-container>
+          </div>
+        </swiper-slide>
+        }
         <!-- End testimonial item -->
 
         <!-- End testimonial item -->

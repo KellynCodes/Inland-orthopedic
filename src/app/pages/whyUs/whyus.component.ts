@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-whyus',
+  selector: 'sobol-whyus',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './whyus.component.html',
-  styleUrls: ['./whyus.component.css']
+  styleUrls: ['./whyus.component.css'],
 })
-export class WhyUsComponent {
-
-}
+export class WhyUsComponent {}

@@ -1,18 +1,32 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  Inject,
+  Input,
+  PLATFORM_ID,
+} from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 
 @Directive({
   selector: '[Swiper]',
+  standalone: true,
 })
 export class SwiperDirective implements AfterViewInit {
   @Input() config?: SwiperOptions;
 
-  constructor(private el: ElementRef<SwiperContainer>) {}
+  constructor(
+    private el: ElementRef<SwiperContainer>,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngAfterViewInit(): void {
-    Object.assign(this.el.nativeElement, this.config);
+    if (isPlatformBrowser(this.platformId)) {
+      Object.assign(this.el.nativeElement, this.config);
 
-    this.el.nativeElement.initialize();
+      this.el.nativeElement.initialize();
+    }
   }
 }

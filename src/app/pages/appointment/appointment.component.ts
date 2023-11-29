@@ -1,19 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { Doctors, Physicians } from '../../data/providers/providers';
 import { HttpStatusCode } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, signal } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { RouterLink } from '@angular/router';
+import { AlertComponent } from '../../components/alert/alert.component';
 
 @Component({
-  selector: 'app-appointment',
+  selector: 'sobol-appointment',
+  standalone: true,
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, AlertComponent],
   templateUrl: './appointment.component.html',
-  styleUrls: ['./appointment.component.css'],
+  styleUrl: './appointment.component.css',
 })
 export class AppointmentComponent {
   public appointmentForm!: FormGroup;
-  public isSending: boolean = false;
-  public errorMessage: string | null | unknown = null;
-  public successMessage: string | null = null;
+  public isSending = signal<boolean>(false);
+  public errorMessage = signal<string | null>(null);
+  public successMessage = signal<string | null>(null);
   public _providers = [...Doctors, ...Physicians];
 
   constructor(private fb: FormBuilder) {}
@@ -25,18 +36,18 @@ export class AppointmentComponent {
       phone: ['', [Validators.pattern('^\\+(?:[0-9] ?){6,14}[0-9]$')]],
       date: [new Date().toDateString(), Validators.required],
       department: ['', Validators.required],
-      message: ['', [Validators.required, Validators.minLength(150)]],
+      message: ['', [Validators.required, Validators.minLength(100)]],
     });
   }
 
   async onSubmit(): Promise<void> {
     if (!this.appointmentForm.valid) {
-      this.errorMessage = 'Please fill all the fields';
+      this.errorMessage.set('Please fill all the fields');
       this.setMessageState(5000);
       return;
     }
     try {
-      this.isSending = true;
+      this.isSending.set(true);
       const response = await emailjs.send(
         'service_emnblen',
         'template_3bamjmo',
@@ -47,22 +58,23 @@ export class AppointmentComponent {
         'IANMnCbipO_NGY3LK'
       );
       if (response.status != HttpStatusCode.Ok) {
-        this.isSending = false;
-        this.errorMessage =
-          'Something unexpected happened while sending the message.Please try again.';
+        this.isSending.set(false);
+        this.errorMessage.set(
+          'Something unexpected happened while sending the message.Please try again.'
+        );
         this.setMessageState(5000);
         return;
       }
       if (response.status == HttpStatusCode.Ok) {
-        this.isSending = false;
-        this.successMessage = 'We have received your message.';
+        this.isSending.set(false);
+        this.successMessage.set('We have received your message.');
         this.setMessageState(5000);
         return;
       }
     } catch (error: any) {
       if (error?.status != HttpStatusCode.Ok) {
-        this.isSending = false;
-        this.errorMessage = 'Appointment not sent. Try again.';
+        this.isSending.set(false);
+        this.errorMessage.set('Appointment not sent. Try again.');
         this.setMessageState(5000);
         return;
       }
@@ -71,8 +83,8 @@ export class AppointmentComponent {
 
   setMessageState(ms: number): void {
     setTimeout(() => {
-      this.errorMessage = null;
-      this.successMessage = null;
+      this.errorMessage.set(null);
+      this.successMessage.set(null);
     }, ms);
     return;
   }

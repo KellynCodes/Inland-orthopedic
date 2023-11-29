@@ -1,4 +1,7 @@
-<app-alert [successMessage]="successMessage" [errorMessage]="errorMessage" />
+<sobol-alert
+  [successMessage]="successMessage()"
+  [errorMessage]="errorMessage()"
+/>
 <section class="mt-36 mb-28 flex flex-col md:flex-row h-screen items-center">
   <div
     class="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 h-screen px-6 lg:px-16 xl:px-24 flex items-center justify-center"
@@ -24,15 +27,10 @@
             class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
             autofocus
           />
-          <h6
-            class="text-red-500"
-            *ngIf="
-              appointmentForm.get('name')?.touched &&
-              appointmentForm.get('name')?.hasError('required')
-            "
-          >
-            Name is required.
-          </h6>
+          @if(appointmentForm.get('name')?.touched &&
+          appointmentForm.get('name')?.hasError('required')){
+          <h6 class="text-red-500">Name is required.</h6>
+          }
         </div>
 
         <div>
@@ -44,15 +42,11 @@
             placeholder="example@gmail.com"
             class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
           />
-          <h6
-            class="text-red-500"
-            *ngIf="
-              appointmentForm.get('email')?.touched &&
-              appointmentForm.get('email')?.hasError('required')
-            "
-          >
-            Name is required.
-          </h6>
+          @if( appointmentForm.get('email')?.touched &&
+          appointmentForm.get('email')?.hasError('required')){
+
+          <h6 class="text-red-500">Email is required.</h6>
+          }
         </div>
 
         <div class="flex flex-col md:flex-row items-start mt-4 md:-mx-4">
@@ -65,15 +59,10 @@
               placeholder="Enter Phone Number"
               class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none"
             />
-            <h6
-              class="text-red-500"
-              *ngIf="
-                appointmentForm.get('phone')?.touched &&
-                appointmentForm.get('phone')?.hasError('pattern')
-              "
-            >
-              Invalid phone number format.
-            </h6>
+            @if( appointmentForm.get('phone')?.touched &&
+            appointmentForm.get('phone')?.hasError('pattern')){
+            <h6 class="text-red-500">Invalid phone number format.</h6>
+            }
           </div>
 
           <div class="w-full md:mx-4 mt-4 md:mt-0">
@@ -104,15 +93,10 @@
                   />
                 </svg>
               </div>
-              <h6
-                class="text-red-500"
-                *ngIf="
-                  appointmentForm.get('department')?.touched &&
-                  appointmentForm.get('department')?.hasError('required')
-                "
-              >
-                Department is required.
-              </h6>
+              @if( appointmentForm.get('department')?.touched &&
+              appointmentForm.get('department')?.hasError('required')){
+              <h6 class="text-red-500">Department is required.</h6>
+              }
             </div>
           </div>
         </div>
@@ -126,32 +110,23 @@
             class="w-full px-4 py-3 rounded bg-gray-200 mt-1 border focus:border-[#003367] focus:bg-white focus:outline-none resize-none"
             rows="3"
           ></textarea>
-          <h6
-            class="text-red-500"
-            *ngIf="
-              appointmentForm.get('message')?.touched &&
-              appointmentForm.get('message')?.hasError('required')
-            "
-          >
-            Message is required.
+          @if(appointmentForm.get('message')?.touched &&
+          appointmentForm.get('message')?.hasError('required')){
+
+          <h6 class="text-red-500">Message is required.</h6>
+          } @if(appointmentForm.get('message')?.touched &&
+          appointmentForm.get('message')?.hasError('minlength')){
+          <h6 class="text-red-500">
+            Message should be equal or greater than 100 characters.
           </h6>
-          <h6
-            class="text-red-500"
-            *ngIf="
-              appointmentForm.get('message')?.touched &&
-              appointmentForm.get('message')?.hasError('minlength')
-            "
-          >
-            Message should be equal or greater than 150 characters.
-          </h6>
+          }
         </div>
 
         <button
-          [innerText]="isSending ? 'Sending...' : 'Send Message'"
           type="submit"
           class="w-full block bg-[#003367] hover:bg-[#ff8686e6] focus:bg-[#ff8686e6] transition-all duration-[100ms] text-white font-semibold rounded px-4 py-3 mt-12"
         >
-          Book Appointment
+          {{ isSending() ? "Booking..." : "Book Appointment" }}
         </button>
       </form>
     </div>

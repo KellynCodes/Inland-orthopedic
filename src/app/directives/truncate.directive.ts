@@ -1,20 +1,36 @@
-import { Directive, ElementRef, Input, HostListener } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Directive,
+  ElementRef,
+  Input,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Directive({
   selector: '[appTruncateText]',
+  standalone: true,
 })
 export class TruncateDirective {
   @Input('appTruncateText') maxLength!: number;
 
-  constructor(private el: ElementRef, private router: Router) {}
-
+  constructor(
+    private el: ElementRef,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   @HostListener('click') onClick() {
-    this.toggleText();
+    if (isPlatformBrowser(this.platformId)) {
+      this.toggleText();
+    }
   }
 
   ngAfterViewInit() {
-    this.toggleText();
+    if (isPlatformBrowser(this.platformId)) {
+      this.toggleText();
+    }
   }
 
   private toggleText() {

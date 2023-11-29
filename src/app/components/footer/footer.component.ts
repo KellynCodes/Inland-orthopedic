@@ -1,7 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-footer',
+  standalone: true,
+  imports: [CommonModule, RouterLink, AlertComponent],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })

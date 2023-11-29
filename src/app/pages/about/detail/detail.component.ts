@@ -1,13 +1,16 @@
-import { Component, Renderer2, ElementRef, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Renderer2, ElementRef } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { OrthoSpecialistsDto } from './Data/ortho.specialists.dto';
 import {
   OrthopedicSpecialties,
   PhysicalTherapy,
 } from './Data/orthospecialists';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-detail',
+  selector: 'sobol-detail',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'],
 })

@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-alert',
+  selector: 'sobol-alert',
+  standalone: true,
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css'],
 })
