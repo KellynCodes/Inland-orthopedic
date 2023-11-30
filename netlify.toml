@@ -4,5 +4,4 @@
   status = 200
 
 [build]
-  command = "ng build"
   publish = "dist/Sobol/browser"
