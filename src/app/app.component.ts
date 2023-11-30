@@ -17,6 +17,6 @@ export class AppComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.IsViewReady = false;
-    }, 3500);
+    }, 2000);
   }
 }

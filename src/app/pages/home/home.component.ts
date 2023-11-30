@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '../../components/button/button.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { AboutComponent } from '../about/about.component';
+import { SwiperDirective } from '../../directives/swiper.directive';
 
 @Component({
   selector: 'sobol-home',
@@ -14,6 +15,7 @@ import { AboutComponent } from '../about/about.component';
     ButtonComponent,
     TestimonialsComponent,
     AboutComponent,
+    SwiperDirective,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],

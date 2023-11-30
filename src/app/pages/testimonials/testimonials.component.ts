@@ -59,6 +59,11 @@ export class TestimonialsComponent {
       delay: 5000,
       disableOnInteraction: false,
     },
+    pagination: {
+      clickable: true,
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
     slidesPerView: 'auto',
     breakpoints: {
       320: {

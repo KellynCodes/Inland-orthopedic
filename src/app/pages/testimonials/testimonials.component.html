@@ -13,10 +13,8 @@
       <swiper-container
         class="swiper-wrapper"
         Swiper
-        pagination="true"
-        pagination-clickable="true"
         [config]="swiperConfig"
-        init="true"
+        init="false"
       >
         @for(testimonial of testimonials; track testimonial.id){
         <swiper-slide class="swiper-slide">
