@@ -1,9 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  Input,
-  AfterContentChecked,
-} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 
@@ -11,7 +6,7 @@ import { fromEvent } from 'rxjs';
   selector: '[appTruncateText]',
   standalone: true,
 })
-export class TruncateDirective implements AfterContentChecked {
+export class TruncateDirective implements AfterViewInit {
   @Input('appTruncateText') maxLength!: number;
 
   constructor(
@@ -20,7 +15,7 @@ export class TruncateDirective implements AfterContentChecked {
     private router: Router
   ) {}
 
-  ngAfterContentChecked(): void {
+  ngAfterViewInit(): void {
     this.toggleText();
   }
 
