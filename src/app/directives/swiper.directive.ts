@@ -23,9 +23,10 @@ export class SwiperDirective implements AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
+    debugger;
     if (isPlatformBrowser(this.platformId)) {
       Object.assign(this.el.nativeElement, this.config);
-
+      console.log('hmmmm');
       this.el.nativeElement.initialize();
     }
   }

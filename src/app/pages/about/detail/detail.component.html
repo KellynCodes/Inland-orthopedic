@@ -10,12 +10,13 @@
       src="assets/images/knee-surgery.jpg"
       alt="Sobol Orthopedic Medical Group"
     />
-    <button
+    <a
       (click)="closeModal()"
+      routerLink="/about"
       class="bg-[#003367] hover:bg-[#ee6565e6] cursor-pointer w-fit h-fit px-3 py-2 rounded-sm text-center text-white font-bold text-lg"
     >
       Close
-    </button>
+    </a>
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Sobol Orthopedic Medical Group</div>
       <div class="text-gray-700 text-base">
@@ -52,19 +53,21 @@
 
     <div class="px-6 pt-4 pb-2">
       <h4 class="font-bold text-xl mb-2">Orthopedic Specialties</h4>
+      @for(orthoSpecialist of orthopedicSpecialists; track orthoSpecialist.key){
       <span
-        *ngFor="let orthoSpecialist of orthopedicSpecialists"
         class="inline-block bg-gray-200 hover:bg-[#ee6565e6] hover:text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
         >{{ orthoSpecialist.value }}</span
       >
+      }
 
       <hr class="m-3" />
       <h4 class="font-bold text-xl m-4">On-Site Services</h4>
+      @for(orthoSpecialist of physicalTherapy; track orthoSpecialist.key){
       <span
-        *ngFor="let orthoSpecialist of physicalTherapy"
         class="inline-block bg-gray-200 hover:bg-[#003367] hover:text-white rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
         >{{ orthoSpecialist.value }}</span
       >
+      }
     </div>
   </div>
 </section>

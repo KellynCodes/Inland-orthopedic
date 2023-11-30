@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:run": "npm install && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Sobol": "node dist/Sobol-orthomed/server/server.mjs"
+    "serve:ssr": "nodemon dist/Sobol/server/server.mjs",
+    "ssr": "nodemon dist/Sobol/server/server.mjs"
   },
   "private": true,
   "dependencies": {
