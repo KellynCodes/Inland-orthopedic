@@ -34,10 +34,7 @@ export class TruncateDirective implements AfterContentChecked {
     const text = this.el.nativeElement.innerText;
     if (text.length > this.maxLength) {
       const truncatedText = text.slice(0, this.maxLength) + '...';
-      this.el.nativeElement.innerText = truncatedText;
-      this.el.nativeElement.append(
-        `<a href="about/detail" class="cursor-pointer inline-block bg-[#003367] hover:bg-[#ee6565e6] text-white rounded-full px-3 py-1 text-sm font-semibold mb-2">Read More</a>`
-      );
+      this.el.nativeElement.innerHTML = `${truncatedText}<a href="about/detail" class="cursor-pointer inline-block bg-[#003367] hover:bg-[#ee6565e6] text-white rounded-full px-3 py-1 text-sm font-semibold mb-2">Read More</a>`;
     }
   }
 }
