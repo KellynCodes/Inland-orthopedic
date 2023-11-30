@@ -1,4 +1,6 @@
-<div *ngIf="IsViewReady" class="loader"></div>
+@if(IsViewReady){
+<div class="loader"></div>
+}
 <sobol-navbar />
 <router-outlet />
 <app-footer />

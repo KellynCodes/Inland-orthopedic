@@ -1,5 +1,5 @@
-import { Component, Renderer2, ElementRef } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { OrthoSpecialistsDto } from './Data/ortho.specialists.dto';
 import {
   OrthopedicSpecialties,
@@ -17,15 +17,5 @@ import { CommonModule } from '@angular/common';
 export class DetailComponent {
   public orthopedicSpecialists: OrthoSpecialistsDto[] = OrthopedicSpecialties;
   public physicalTherapy: OrthoSpecialistsDto[] = PhysicalTherapy;
-  constructor(
-    private renderer: Renderer2,
-    private el: ElementRef,
-    private router: Router
-  ) {}
-
-  // Function to close the modal and remove the CSS class
-  closeModal() {
-    console.log('clicked');
-    this.router.navigateByUrl('about');
-  }
+  constructor() {}
 }
