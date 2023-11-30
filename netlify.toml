@@ -4,4 +4,4 @@
   status = 200
 
 [build]
-  publish = "dist/sobol"
+  publish = "dist/sobol/browser"
