@@ -20,7 +20,5 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(),
-    { provide: LocationStrategy, useClass: PathLocationStrategy },
-    { provide: TitleStrategy, useClass: TemplatePageTitleStrategy },
   ],
 };

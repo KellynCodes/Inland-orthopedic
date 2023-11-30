@@ -23,27 +23,9 @@ export class DetailComponent {
     private router: Router
   ) {}
 
-  // Function to open the modal and apply the CSS class
-  ngOnInit(): void {
-    this.openModal();
-  }
-
-  ngOnDestroy(): void {
-    this.closeModal();
-  }
-
-  openModal() {
-    this.renderer.addClass(
-      this.el.nativeElement.ownerDocument.body,
-      'modal-open'
-    );
-  }
   // Function to close the modal and remove the CSS class
   closeModal() {
-    this.renderer.removeClass(
-      this.el.nativeElement.ownerDocument.body,
-      'modal-open'
-    );
+    console.log('clicked');
     this.router.navigateByUrl('about');
   }
 }
